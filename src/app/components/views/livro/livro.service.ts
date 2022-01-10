@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { Observable } from 'rxjs';
+import { Observable} from 'rxjs';
 import { Livro } from './livro.model';
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -31,6 +31,11 @@ export class LivroService {
   create(livro:Livro, id_cat: String): Observable<Livro>{
     const url = `${this.baseUrl}/livros?categoria=${id_cat}` 
     return this.http.post<Livro>(url,livro)
+  }
+
+  delete(id: String):Observable<void>{
+    const url = `${this.baseUrl}/livros/${id}` 
+    return this.http.delete<void>(url)
   }
 
   mensagem(str: String): void{
