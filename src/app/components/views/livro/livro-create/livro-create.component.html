@@ -1,0 +1,28 @@
+<form action="">
+    <h1>CRIANDO UMA NOVO LIVRO</h1>
+
+    <mat-form-field class="form">
+        <mat-label>Titulo</mat-label>
+        <input matInput [(ngModel)] = "livro.titulo" [formControl]="titulo" required maxlength="100" type="text" name="titulo" placeholder="Ex. Curso Spring Boot com Angular 10">
+        <mat-error *ngIf="titulo.invalid">{{ getMessage() }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form">
+        <mat-label>Nome do autor</mat-label>
+        <input matInput [(ngModel)] = "livro.nome_autor" type="text" [formControl]="nome_autor" required name="nome_autor" placeholder="Ex. Artur" maxlength="100">
+        <mat-error *ngIf="nome_autor.invalid">{{ getMessage() }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form">
+        <mat-label>Texto</mat-label>
+        <textarea matInput [(ngModel)] = "livro.texto" type="text" [formControl]="texto" required name="texto" placeholder="Ex. Lorem Ipsum" maxlength="2000000"> </textarea>
+        <mat-error *ngIf="texto.invalid">{{ getMessage() }}</mat-error>
+    </mat-form-field>
+
+
+    <div class="buttons">
+        <button (click)="create()" [disabled]="getMessage()" class="mat-elevation-z8" mat-stroked-button color="primary">CRIAR</button>
+        <button (click)="cancel()" class="mat-elevation-z8" mat-stroked-button color="warn">CANCELAR</button>
+
+    </div>
+</form>

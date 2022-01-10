@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +26,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { CategoriaDeleteComponent } from './components/views/categoria/categoria-delete/categoria-delete.component';
 import { CategoriaUpdateComponent } from './components/views/categoria/categoria-update/categoria-update.component';
 import { LivroReadAllComponent } from './components/views/livro/livro-read-all/livro-read-all.component';
+import { LivroCreateComponent } from './components/views/livro/livro-create/livro-create.component';
+import { LivroUpdateComponent } from './components/views/livro/livro-update/livro-update.component';
 
 
 
@@ -41,7 +43,9 @@ import { LivroReadAllComponent } from './components/views/livro/livro-read-all/l
     CategoriaCreateComponent,
     CategoriaDeleteComponent,
     CategoriaUpdateComponent,
-    LivroReadAllComponent
+    LivroReadAllComponent,
+    LivroCreateComponent,
+    LivroUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +62,8 @@ import { LivroReadAllComponent } from './components/views/livro/livro-read-all/l
     FormsModule,
     MatInputModule,
     MatFormFieldModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
